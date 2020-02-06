@@ -1,9 +1,43 @@
-@media screen and (max-height: 450px) {
+@media only screen and (max-width: 1024px) {
   .sidenav {
     padding-top: 15px;
   }
   .sidenav a {
     font-size: 18px;
+  }
+  .cell1 {
+    background-color: white !important;
+  }
+  .left-side-background {
+    width: 0 !important;
+  }
+  .right-side-background {
+    width: 0 !important;
+  }
+  .nested-row-container {
+    width: 100% !important;
+  }
+  #firstNav {
+    width: 0 !important;
+  }
+  #secondNav {
+    width: 0 !important;
+  }
+  #thirdNav {
+    width: 0 !important;
+  }
+  #fourthNav {
+    width: 0 !important;
+  }
+  .cell6 {
+    height: 33.3vh !important;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .nested-cell3 {
+    height: 0 !important;
+    display: none !important;
   }
 }
 
@@ -11,6 +45,17 @@ body {
   background-color: grey;
   overflow: hidden;
   margin: 0;
+}
+
+body canvas {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 body .sidenav {
@@ -24,15 +69,14 @@ body .sidenav {
   /* Stay on top */
   top: 0;
   /* Stay at the top */
-  left: 0;
   background-color: #111;
   /* Black*/
   overflow-x: hidden;
   /* Disable horizontal scroll */
   padding-top: 60px;
   /* Place content 60px from the top */
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
   /* 0.5 second transition effect to slide in the sidenav */
 }
 
@@ -42,8 +86,8 @@ body .sidenav .a {
   font-size: 25px;
   color: #818181;
   display: block;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 
 body .sidenav .a:hover {
@@ -58,20 +102,37 @@ body .sidenav .a .closebtn {
   margin-left: 50px;
 }
 
+body #firstNav {
+  left: 0;
+}
+
+body #secondNav {
+  right: 0;
+}
+
+body #thirdNav {
+  left: 0;
+}
+
+body #fourthNav {
+  right: 0;
+}
+
 body .grid-container {
   display: -ms-grid;
   display: grid;
   background-color: white;
   max-height: 100vh;
   overflow-y: scroll;
+  overflow-x: hidden;
   -ms-scroll-snap-type: mandatory;
       scroll-snap-type: mandatory;
   -ms-scroll-snap-points-y: repeat(3rem);
       scroll-snap-points-y: repeat(3rem);
   -ms-scroll-snap-type: y mandatory;
       scroll-snap-type: y mandatory;
-  grid-gap: 10px;
-      grid-template-areas: "a" "b" "c";
+  grid-gap: 0px;
+      grid-template-areas: "a" "b" "c" "d" "e" "f";
 }
 
 body .grid-container .cells {
@@ -91,10 +152,31 @@ body .grid-container .cells {
 }
 
 body .grid-container .cell1 {
-  background-color: #ffa47a;
+  background-color: #2f2f2f;
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: a;
+  position: relative;
+}
+
+body .grid-container .cell1 #Introduction {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: center;
+      align-self: center;
+  padding-bottom: 3rem;
+}
+
+body .grid-container .cell1 #Introduction2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: center;
+      align-self: center;
+  position: absolute;
+  padding-top: 3rem;
 }
 
 body .grid-container .cell2 {
@@ -118,6 +200,12 @@ body .grid-container .cell2 .nested-column-container {
 
 body .grid-container .cell2 .nested-column-container .left-side-background {
   width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 body .grid-container .cell2 .nested-column-container .nested-row-container {
@@ -155,10 +243,201 @@ body .grid-container .cell2 .nested-column-container .nested-row-container .nest
   background-color: #82b8ff;
 }
 
+body .grid-container .cell2 .nested-column-container .nested-row-container .nested-cell3 {
+  background-color: pink;
+}
+
 body .grid-container .cell3 {
   background-color: #7c5252;
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: c;
+}
+
+body .grid-container .cell3 .nested-column-container {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+body .grid-container .cell3 .nested-column-container .right-side-background {
+  width: 50%;
+}
+
+body .grid-container .cell3 .nested-column-container .nested-row-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 50%;
+}
+
+body .grid-container .cell3 .nested-column-container .nested-row-container .nested-cells {
+  background-color: green;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .grid-container .cell3 .nested-column-container .nested-row-container .nested-cell1 {
+  width: 100%;
+  background-color: #82ff82;
+}
+
+body .grid-container .cell3 .nested-column-container .nested-row-container .nested-cell2 {
+  background-color: #82b8ff;
+}
+
+body .grid-container .cell3 .nested-column-container .nested-row-container .nested-cell3 {
+  background-color: pink;
+}
+
+body .grid-container .cell4 {
+  background-color: #b667b6;
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: d;
+}
+
+body .grid-container .cell4 .nested-column-container {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+body .grid-container .cell4 .nested-column-container .left-side-background {
+  width: 50%;
+}
+
+body .grid-container .cell4 .nested-column-container .nested-row-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 50%;
+}
+
+body .grid-container .cell4 .nested-column-container .nested-row-container .nested-cells {
+  background-color: green;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .grid-container .cell4 .nested-column-container .nested-row-container .nested-cell1 {
+  width: 100%;
+  background-color: #82ff82;
+}
+
+body .grid-container .cell4 .nested-column-container .nested-row-container .nested-cell2 {
+  background-color: #82b8ff;
+}
+
+body .grid-container .cell4 .nested-column-container .nested-row-container .nested-cell3 {
+  background-color: pink;
+}
+
+body .grid-container .cell5 {
+  background-color: #7c5252;
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  grid-area: e;
+}
+
+body .grid-container .cell5 .nested-column-container {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+body .grid-container .cell5 .nested-column-container .right-side-background {
+  width: 50%;
+}
+
+body .grid-container .cell5 .nested-column-container .nested-row-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 50%;
+}
+
+body .grid-container .cell5 .nested-column-container .nested-row-container .nested-cells {
+  background-color: green;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .grid-container .cell5 .nested-column-container .nested-row-container .nested-cell1 {
+  width: 100%;
+  background-color: #82ff82;
+}
+
+body .grid-container .cell5 .nested-column-container .nested-row-container .nested-cell2 {
+  background-color: #82b8ff;
+}
+
+body .grid-container .cell5 .nested-column-container .nested-row-container .nested-cell3 {
+  background-color: pink;
+}
+
+body .grid-container .cell6 {
+  background-color: #ffa47a;
+  -ms-grid-row: 6;
+  -ms-grid-column: 1;
+  grid-area: f;
+  height: 100vh;
 }
 /*# sourceMappingURL=Index.css.map */

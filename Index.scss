@@ -1,6 +1,49 @@
-@media screen and (max-height: 450px) {
+// Mobile
+@media only screen and (max-width: 1024px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
+    .cell1{
+        background-color: white !important;
+    }
+    .left-side-background{
+        width: 0 !important;
+    }
+    .right-side-background{
+        width: 0 !important;
+    }
+
+    .nested-row-container{
+        width: 100% !important;
+    }
+
+    #firstNav{
+        width: 0 !important;
+    }
+
+    #secondNav{
+        width: 0 !important;
+    }
+
+    #thirdNav{
+        width: 0 !important;
+    }
+
+    #fourthNav{
+        width: 0 !important;
+    }
+
+    .cell6{
+        height: 33.3vh !important;
+    }
+
+}
+
+// Desktop
+@media only screen and (min-width: 1025px) {
+    .nested-cell3{
+        height: 0 !important;
+        display: none !important;
+    }
 }
 
 @mixin baseStyle {
@@ -16,24 +59,30 @@ body {
     overflow: hidden;
     margin: 0;
 
+    canvas{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+    }
+
     .sidenav {
         height: 100%; /* 100% Full-height */
         width: 0; /* 0 width - change this with JavaScript */
         position: fixed; /* Stay in place */
         z-index: 1; /* Stay on top */
         top: 0; /* Stay at the top */
-        left: 0;
         background-color: #111; /* Black*/
         overflow-x: hidden; /* Disable horizontal scroll */
         padding-top: 60px; /* Place content 60px from the top */
-        transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+        transition: 0.3s; /* 0.5 second transition effect to slide in the sidenav */
         .a {
             padding: 8px 8px 8px 32px;
             text-decoration: none;
             font-size: 25px;
             color: #818181;
             display: block;
-            transition: 0.3s;
+            transition: 0.2s;
 
             &:hover{
                 color: #f1f1f1;
@@ -49,11 +98,28 @@ body {
         }
     }
 
+    #firstNav{
+        left: 0;
+    }
+
+    #secondNav{
+        right: 0;
+    }
+
+    #thirdNav{
+        left: 0;
+    }
+
+    #fourthNav{
+        right: 0;
+    }
+
     .grid-container{
         display: grid;
         background-color: white;
         max-height: 100vh;
         overflow-y: scroll;
+        overflow-x: hidden;
         scroll-snap-type: mandatory;
         scroll-snap-points-y: repeat(3rem);
         scroll-snap-type: y mandatory;
@@ -64,13 +130,99 @@ body {
         }
 
         .cell1{
-            background-color: rgb(255, 164, 122);
+            background-color: rgb(47, 47, 47);
             grid-area: a;
+            position: relative;
+            #Introduction{
+                position: absolute;
+                display: flex;
+                align-self: center;
+                padding-bottom: 3rem;
+            }
+
+            #Introduction2{
+                display: flex;
+                align-self: center;
+                position: absolute;
+                padding-top: 3rem;
+            }
         }
         
         .cell2{
             background-color: rgb(182, 103, 182);
             grid-area: b;
+            .nested-column-container{
+                width: 100vw;
+                height: 100vh;
+                display: flex;
+                flex-direction: row;
+
+                .left-side-background{
+                    width: 50%;
+                    display: flex;
+                    align-items: center;
+                }
+
+                .nested-row-container{
+                    display: flex;
+                    flex-direction: column;
+                    width: 50%;
+
+                    .nested-cells{
+                        @include baseStyle();
+                    } 
+                    .nested-cell1{
+                        width: 100%;
+                        background-color: rgb(130, 255, 130);
+                    }
+                    .nested-cell2{
+                        background-color: rgb(130, 184, 255);
+                    }
+                    .nested-cell3{
+                        background-color: pink;
+                    }
+                }
+            }
+        }
+
+        .cell3{
+            background-color: rgb(124, 82, 82);
+            grid-area: c;
+            .nested-column-container{
+                width: 100vw;
+                height: 100vh;
+                display: flex;
+                flex-direction: row;
+
+                .right-side-background{
+                    width: 50%;
+                }
+
+                .nested-row-container{
+                    display: flex;
+                    flex-direction: column;
+                    width: 50%;
+
+                    .nested-cells{
+                        @include baseStyle();
+                    } 
+                    .nested-cell1{
+                        width: 100%;
+                        background-color: rgb(130, 255, 130);
+                    }
+                    .nested-cell2{
+                        background-color: rgb(130, 184, 255);
+                    }
+                    .nested-cell3{
+                        background-color: pink;
+                    }
+                }
+            }
+        }
+
+        .cell4{
+            background-color: rgb(182, 103, 182);
+            grid-area: d;
             .nested-column-container{
                 width: 100vw;
                 height: 100vh;
@@ -96,20 +248,62 @@ body {
                     .nested-cell2{
                         background-color: rgb(130, 184, 255);
                     }
+                    .nested-cell3{
+                        background-color: pink;
+                    }
                 }
             }
         }
 
-        .cell3{
+        .cell5{
             background-color: rgb(124, 82, 82);
-            grid-area: c;
+            grid-area: e;
+            .nested-column-container{
+                width: 100vw;
+                height: 100vh;
+                display: flex;
+                flex-direction: row;
+
+                .right-side-background{
+                    width: 50%;
+                }
+
+                .nested-row-container{
+                    display: flex;
+                    flex-direction: column;
+                    width: 50%;
+
+                    .nested-cells{
+                        @include baseStyle();
+                    } 
+                    .nested-cell1{
+                        width: 100%;
+                        background-color: rgb(130, 255, 130);
+                    }
+                    .nested-cell2{
+                        background-color: rgb(130, 184, 255);
+                    }
+                    .nested-cell3{
+                        background-color: pink;
+                    }
+                }
+            }
         }
 
-        grid-gap: 10px;
+        .cell6{
+            background-color: rgb(255, 164, 122);
+            grid-area: f;
+            height: 100vh;
+        }
+
+        grid-gap: 0px;
 
         grid-template-areas: 
             "a"
             "b"
-            "c";
+            "c"
+            "d"
+            "e"
+            "f";
     }
 }

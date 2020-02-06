@@ -10,6 +10,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="Index.css">
+        <script src="https://cdn.jsdelivr.net/npm/dat.gui@0.7.6/build/dat.gui.min.js"></script>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -17,26 +18,92 @@
         <![endif]-->
 
 
-        <div onmouseout="closeNav()" id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div onmouseout="closeFirstNav()" id="firstNav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeFirstNav()">&times;</a>
             <a href="#">About</a>
             <a href="#">Services</a>
             <a href="#">Clients</a>
             <a href="#">Contact</a>
         </div>
 
-        <div onscroll="closeNav()" class="grid-container">
-            <div class="cells cell1">Item 1</div>
-            <div onclick="openNav()" class="cells cell2">
+        <div onmouseout="closeSecondNav()" id="secondNav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeSecondNav()">&times;</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Clients</a>
+            <a href="#">Contact</a>
+        </div>
+
+        <div onmouseout="closeThirdNav()" id="thirdNav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeThirdNav()">&times;</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Clients</a>
+            <a href="#">Contact</a>
+        </div>
+
+        <div onmouseout="closeFourthNav()" id="fourthNav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeFourthNav()">&times;</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Clients</a>
+            <a href="#">Contact</a>
+        </div>
+
+        <div onscroll="closeAllNavs()" class="grid-container">
+            <div class="cells cell1">
+                <div id="Introduction">
+                    <h1>Hello, I'm Zachary Marvin.</h1>
+                </div>
+                <div id="Introduction2">
+                    <h1>I'm a full-stack web developer</h1>
+                </div>
+                <canvas>
+                    
+                </canvas>
+            </div>
+            <div onclick="openFirstNav()" class="cells cell2">
                 <div class="nested-column-container">
-                    <div onmouseover="openNav()" class="left-side-background"></div>
+                    <div onmouseover="openFirstNav()" class="left-side-background"></div>
                     <div class="nested-row-container">
                         <div class="nested-cells nested-cell1">Cell 1</div>
                         <div class="nested-cells nested-cell2">Cell 2</div>
+                        <div class="nested-cells nested-cell3">Hidden Cell</div>
                     </div>
                 </div>
             </div>
-            <div class="cells cell3">Item 3</div>
+            <div class="cells cell3">
+                <div class="nested-column-container">
+                    <div class="nested-row-container">
+                        <div class="nested-cells nested-cell1">Cell 1</div>
+                        <div class="nested-cells nested-cell2">Cell 2</div>
+                        <div class="nested-cells nested-cell3">Hidden Cell</div>
+                    </div>
+                    <div onmouseover="openSecondNav()" class="right-side-background"></div>
+                </div>
+            </div>
+
+            <div onclick="openThirdNav()" class="cells cell4">
+                <div class="nested-column-container">
+                    <div onmouseover="openThirdNav()" class="left-side-background"></div>
+                    <div class="nested-row-container">
+                        <div class="nested-cells nested-cell1">Cell 1</div>
+                        <div class="nested-cells nested-cell2">Cell 2</div>
+                        <div class="nested-cells nested-cell3">Hidden Cell</div>
+                    </div>
+                </div>
+            </div>
+            <div class="cells cell5">
+                <div class="nested-column-container">
+                    <div class="nested-row-container">
+                        <div class="nested-cells nested-cell1">Cell 1</div>
+                        <div class="nested-cells nested-cell2">Cell 2</div>
+                        <div class="nested-cells nested-cell3">Hidden Cell</div>
+                    </div>
+                    <div onmouseover="openFourthNav()" class="right-side-background"></div>
+                </div>
+            </div>
+            <div class="cells cell6">Item 1</div>
         </div>
     </body>
     <script src="Index.js"></script>

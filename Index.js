@@ -47,23 +47,7 @@ function closeAllNavs() {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// Following Code is for Intro Particles
 const parameters = {
   gravityCoefficient: 0.5,
   particleCount: 3000,
@@ -246,3 +230,7 @@ const renderParticlesFrame = () => {
   
 };
 renderParticlesFrame();
+
+
+
+

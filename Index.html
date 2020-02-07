@@ -10,7 +10,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="Index.css">
-        <script src="https://cdn.jsdelivr.net/npm/dat.gui@0.7.6/build/dat.gui.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,700i&display=swap" rel="stylesheet">
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -52,11 +52,17 @@
 
         <div onscroll="closeAllNavs()" class="grid-container">
             <div class="cells cell1">
-                <div id="Introduction">
-                    <h1>Hello, I'm Zachary Marvin.</h1>
+                <div class="Intro" id="Introduction1">
+                    <h1>Hello, my name is </h1><h1 id="myName">Zac Marvin.</h1>
                 </div>
-                <div id="Introduction2">
-                    <h1>I'm a full-stack web developer</h1>
+                <div class="Intro" id="Introduction2">
+                    <h1>I'm a full-stack web developer by day.</h1>
+                </div>
+                <div class="Intro" id="Introduction3">
+                    <h1>And an indie game developer by night.</h1>
+                </div>
+                <div class="Intro" id="Introduction4">
+                    <h1>Scroll down to see my work!</h1>
                 </div>
                 <canvas>
                     
@@ -64,10 +70,42 @@
             </div>
             <div onclick="openFirstNav()" class="cells cell2">
                 <div class="nested-column-container">
-                    <div onmouseover="openFirstNav()" class="left-side-background"></div>
+                    <div onmouseover="openFirstNav()" class="left-side-background">
+                        <div class='solar-syst'>
+                            <div class='sun'></div>
+                            <div class='mercury'></div>
+                            <div class='venus'></div>
+                            <div class='earth'></div>
+                            <div class='mars'></div>
+                            <div class='jupiter'></div>
+                            <div class='saturn'></div>
+                            <div class='uranus'></div>
+                            <div class='neptune'></div>
+                            <div class='pluto'></div>
+                            <div class='asteroids-belt'></div>
+                        </div>
+                    </div>
                     <div class="nested-row-container">
-                        <div class="nested-cells nested-cell1">Cell 1</div>
-                        <div class="nested-cells nested-cell2">Cell 2</div>
+                        <div class="nested-cells nested-cell1">
+                            <p class="projectName">Space News Hub</p>
+                            <p class="projectDesc">Space News Hub is a website I decided to create on a whim <br>
+                            I'm obsessed with space and I was tired of having to visit<br>
+                            multiple websites to get all of my space news from the source.<br>
+                            So I decided to build a site that pulls data in directly from many<br>
+                            different space related sites like nasa.com and spacex.com. There<br>
+                            are no ads on my site. No opinionated news articles. No drama.<br>
+                            Just Space News.
+                            </p>
+                        </div>
+                        <div class="nested-cells nested-cell2">
+                            <p class="projectName">Technologies Used</p>
+                            <div class="iconsContainer">
+                                <img class="techIcons" id="jsIcon" src=/Images/js.png alt="Javascript">
+                                <img class="techIcons" id="jqueryIcon" src=/Images/jquery.png alt="JQuery">
+                                <img class="techIcons" id="htmlIcon" src=/Images/html.png alt="HTML5">
+                                <img class="techIcons" id="cssIcon" src=/Images/css.png alt="CSS3">
+                            </div>
+                        </div>
                         <div class="nested-cells nested-cell3">Hidden Cell</div>
                     </div>
                 </div>

@@ -15,10 +15,8 @@
     .cell1{
         background-color: white !important;
     }
-    .cell2{
-        .projectName{
-            font-size: 5vw !important;
-        }
+    .projectName{
+        font-size: 5vw !important;
     }
     .left-side-background{
         width: 0 !important;
@@ -88,13 +86,11 @@
         font-size: 10px !important;
     }
 
-    .cell2{
-        .projectName{
-            font-size: 6vw !important;
-        }
-        .projectDesc{
-            font-size: 4.5vw !important;
-        }
+    .projectName{
+        font-size: 6vw !important;
+    }
+    .projectDesc{
+        font-size: 4.5vw !important;
     }
 
     
@@ -398,80 +394,6 @@ body {
         .cell2{
             background-color: rgb(0, 4, 17);
             grid-area: b;
-            .nested-column-container{
-                width: 100vw;
-                height: 100vh;
-                display: flex;
-                flex-direction: row;
-
-                .left-side-background{
-                    width: 50%;
-                    display: flex;
-                    align-items: center;
-                }
-
-                .nested-row-container{
-                    display: flex;
-                    flex-direction: column;
-                    width: 50%;
-                    .projectName{
-                        font-size: 3vw;
-                        align-self: center;
-                        font-weight: 700;
-                    }
-
-                    .projectDesc{
-                        align-self: center;
-                        text-align: center;
-                        font-size: 1.5vw;
-                        font-weight: 400;
-                        margin-top: 0;
-                    }
-
-                    .nested-cells{
-                        @include baseStyle();                        
-                        justify-content: start;
-                    } 
-                    .nested-cell1{
-                        width: 100%;
-                        background: linear-gradient(0deg, rgb(223, 232, 235) ,rgb(182, 199, 204));
-
-                    }
-                    .nested-cell2{
-                        background: linear-gradient(0deg, rgb(233, 239, 241), rgb(223, 232, 235));
-                    }
-                    .nested-cell3{
-                        background: linear-gradient(0deg, rgb(252, 254, 255), rgb(233, 239, 241));
-                    }
-                    .iconsContainer{
-                        align-self: center;
-                    }
-                    #jsIcon{
-                        width: 10vw;
-                        transform: rotate(5deg);
-                        padding-top: 3vh;
-                    }
-                    #jqueryIcon{
-                        width: 10vw;
-                        transform: rotate(-12deg);
-                        padding-bottom: 3vh;
-                    }
-                    #htmlIcon{
-                        width: 8vw;
-                        transform: rotate(7deg);
-                        padding-top: 3vh;
-                    }
-                    #cssIcon{
-                        width: 8vw;
-                        transform: rotate(-11deg);
-                        padding-bottom: 5vh;
-                    }
-
-                    .techIcons{
-                        padding-left: 1vw;
-                    }
-                }
-            }
         }
 
         .cell3{
@@ -594,6 +516,101 @@ body {
             "d"
             "e"
             "f";
+
+        .nested-column-container{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: row;
+
+            .left-side-background{
+                width: 50%;
+                display: flex;
+                align-items: center;
+            }
+
+            .nested-row-container{
+                display: flex;
+                flex-direction: column;
+                width: 50%;
+                .projectName{
+                    font-size: 3vw;
+                    align-self: center;
+                    font-weight: 700;
+                }
+
+                .projectDesc{
+                    align-self: center;
+                    text-align: center;
+                    font-size: 1.5vw;
+                    font-weight: 400;
+                    margin-top: 0;
+                }
+
+                .nested-cells{
+                    @include baseStyle();                        
+                    justify-content: start;
+                } 
+                .nested-cell1{
+                    width: 100%;
+                    background: linear-gradient(0deg, rgb(223, 232, 235) ,rgb(182, 199, 204));
+
+                }
+                .nested-cell2{
+                    background: linear-gradient(0deg, rgb(233, 239, 241), rgb(223, 232, 235));
+                }
+                .nested-cell3{
+                    background: linear-gradient(0deg, rgb(252, 254, 255), rgb(233, 239, 241));
+                }
+                .iconsContainer{
+                    align-self: center;
+                }
+                #jsIcon{
+                    width: 10vw;
+                    transform: rotate(5deg);
+                    padding-top: 3vh;
+                }
+                #jqueryIcon{
+                    width: 10vw;
+                    transform: rotate(-12deg);
+                    padding-bottom: 3vh;
+                }
+                #htmlIcon{
+                    width: 8vw;
+                    transform: rotate(7deg);
+                    padding-top: 3vh;
+                }
+                #cssIcon{
+                    width: 8vw;
+                    transform: rotate(-11deg);
+                    padding-bottom: 5vh;
+                }
+
+                #unityIcon{
+                    width: 15vw;
+                    transform: rotate(-20deg);
+                    padding-bottom: 3vh;
+                }
+
+                #csharpIcon{
+                    width: 8vw;
+                    transform: rotate(-5deg);
+                    padding-top: 3vh;
+                    padding-left: 0;
+                    padding-right: 1vw;
+                }
+
+                #asepriteIcon{
+                    width:15vw;
+                    transform: rotate(7deg);
+                    padding-bottom: 7vh;
+                }
+
+                .techIcons{
+                    padding-left: 1vw;
+                }
+            }
+        }
     }
 }
 
@@ -882,6 +899,8 @@ $asteroids-belt-orb : 300px; $asteroids-belt-pl: 210px;
   }
 }
 
+@keyframes glow {to {text-shadow: 0 0 10px #d4dae0, 0 0 20px #d0e0f1, 0 0 30px #c0ddff}};
+
 
 //Expand Button SCSS
 .expand-button-container{
@@ -912,5 +931,28 @@ $asteroids-belt-orb : 300px; $asteroids-belt-pl: 210px;
     }
       
     @keyframes pulse {to {box-shadow: 0 0 0 45px #81818100}};
-    @keyframes glow {to {text-shadow: 0 0 10px #d4dae0, 0 0 20px #d0e0f1, 0 0 30px #c0ddff}};
+}
+
+// Rocket Moon Animation
+.rocket{
+	width:500px;
+	height:500px;
+	animation-name: spin;
+	animation:spin 5s linear infinite;
+}
+@keyframes spin{ 
+	0% { -webkit-transform: rotate(0deg);transform:rotate(0deg);}
+	25% { -webkit-transform: rotate(90deg);transform:rotate(90deg);}
+	50% { -webkit-transform: rotate(180deg);transform:rotate(180deg);}
+	75% { -webkit-transform: rotate(270deg);transform:rotate(270deg);}
+	100% { -webkit-transform: rotate(360deg);transform:rotate(360deg);} 
+}
+@media screen and (max-width: 700px){
+	.rocket{
+		width:250px;
+		height:250px;
+	}
+	#moon{
+		width:40%;
+	}
 }

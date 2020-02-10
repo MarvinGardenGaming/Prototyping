@@ -1,4 +1,16 @@
-
+@function revolution($pl-year-in-days){
+    @return $pl-year-in-days * $year-in-second / 365.2563 + s  //Earth reference
+  }
+  @function alphaRandom(){
+    @return random(1000)*.001;
+  }
+  @function stars($s, $max-area, $min-area : 0, $star-size : 0){
+    $stars : #{$min-area + random($max-area)}px #{$min-area + random($max-area)}px 0 #{$star-size}px rgba(255,255,255, alphaRandom()); 
+    @for $i from 1 to $s{
+      $stars: '#{$stars} , #{$min-area + random($max-area)}px #{$min-area + random($max-area)}px 0 #{$star-size}px rgba(255,255,255, #{alphaRandom()})'
+    }
+    @return unquote($stars);
+  }
 
 // Desktop
 @media only screen and (min-width: 1025px) {
@@ -58,6 +70,10 @@
         font-size: 3.5vw !important;
     }
 
+    #moon-rocket-container{
+        display: none !important;
+    }
+
     #jsIcon{
         width: 18vw !important;
         padding-top: 3vh !important;
@@ -73,6 +89,21 @@
     #cssIcon{
         width: 14vw !important;
         padding-bottom: 2vh !important;
+    }
+
+    #unityIcon{
+        width: 35vw !important;
+    }
+
+    #csharpIcon{
+        width: 20vw !important;
+        padding-top: 2vh !important;
+    }
+
+    #asepriteIcon{
+        width: 33vw !important;
+        padding-bottom: 2vh !important;
+        transform: rotate(30deg) !important;
     }
 
     .techIcons{
@@ -128,6 +159,16 @@
     }
     
     #firstBoxClose:before {
+        content: "×";
+        padding-left: 0 !important;
+    }
+
+    #secondBoxClose{
+        width: 18px !important;
+        height: 0 !important;
+    }
+    
+    #secondBoxClose:before {
         content: "×";
         padding-left: 0 !important;
     }
@@ -223,6 +264,10 @@ body {
         }
     }
 
+    #firstMobileNav{
+        display: none;
+    }
+
     #firstBoxClose{
         float: right;
         width: 35px;
@@ -243,6 +288,35 @@ body {
     }
     
     #firstBoxClose:before {
+        content: "×";
+        align-self: center;
+        padding-left: 8px;
+    }
+
+    #secondMobileNav{
+        display: none;
+    }
+
+    #secondBoxClose{
+        float: right;
+        width: 35px;
+        height: 20px;
+        cursor: pointer;
+        color: #fff;
+        border: 1px solid #AEAEAE;
+        border-radius: 30px;
+        background: #605F61;
+        font-size: 31px;
+        font-weight: bold;
+        display: none;
+        line-height: 0px;
+        position: absolute;
+        padding: 11px 3px;
+        margin-left: 90vw;
+        margin-top: 2vh;
+    }
+    
+    #secondBoxClose:before {
         content: "×";
         align-self: center;
         padding-left: 8px;
@@ -397,7 +471,7 @@ body {
         }
 
         .cell3{
-            background-color: rgb(124, 82, 82);
+            background-color: rgb(1, 10, 37);
             grid-area: c;
             .nested-column-container{
                 width: 100vw;
@@ -407,6 +481,9 @@ body {
 
                 .right-side-background{
                     width: 50%;
+                    display: flex;
+                    position: relative;
+                    justify-content: center;
                 }
 
                 .nested-row-container{
@@ -619,20 +696,6 @@ body {
 
 //SCSS for solar system
 $year-in-second : 30; // 1 Earth year = 30 sec
-
-@function revolution($pl-year-in-days){
-  @return $pl-year-in-days * $year-in-second / 365.2563 + s  //Earth reference
-}
-@function alphaRandom(){
-  @return random(1000)*.001;
-}
-@function stars($s, $max-area, $min-area : 0, $star-size : 0){
-  $stars : #{$min-area + random($max-area)}px #{$min-area + random($max-area)}px 0 #{$star-size}px rgba(255,255,255, alphaRandom()); 
-  @for $i from 1 to $s{
-    $stars: '#{$stars} , #{$min-area + random($max-area)}px #{$min-area + random($max-area)}px 0 #{$star-size}px rgba(255,255,255, #{alphaRandom()})'
-  }
-  @return unquote($stars);
-}
 
 $sun: 40px;
 $mercury-orb : 70px; $mercury-pl: 4px; 
@@ -938,7 +1001,16 @@ $asteroids-belt-orb : 300px; $asteroids-belt-pl: 210px;
 	width:500px;
 	height:500px;
 	animation-name: spin;
-	animation:spin 5s linear infinite;
+    animation:spin 5s linear infinite;
+    position: absolute;
+    align-self: center;
+}
+#moon-rocket-container{
+    display: flex;
+    justify-content: center;
+}
+#moon{
+    align-self: center;
 }
 @keyframes spin{ 
 	0% { -webkit-transform: rotate(0deg);transform:rotate(0deg);}
